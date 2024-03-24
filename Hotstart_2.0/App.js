@@ -1,17 +1,34 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import styled from "styled-components";
+import { StatusBar,ScrollView} from 'react-native';
+import styled from "styled-components"
+import BigCard from './components/BigCard';
 
 export default class App extends React.Component {
   render(){
     return (
       <Main>
-        <StatusBar hidden/>
-        <Header>
-          <Logo>Hotstar</Logo>
-          <Profile />
-        </Header>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <StatusBar hidden/>
+          <Header>
+            <Logo>Hotstar</Logo>
+            <Profile />
+          </Header>
+          <BigCardContainer>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              
+              {
+                BigCardData.map(
+                
+                (data,index)=>( 
+                  <BigCard key={index} image={data.image} />
+                  )
+                )
+              }
+              
+
+            </ScrollView>
+          </BigCardContainer>
+        </ScrollView>
       </Main>
     );
   }
@@ -31,7 +48,7 @@ const Header = styled.View`
 
 const Profile = styled.Image`
   position: absolute;
-  top: 5px;
+  top: 7px;
   right: 5px;
   width: 40px;
   height: 40px;
@@ -45,3 +62,32 @@ const Logo = styled.Text`
   color: black;
   font-size: 25px;
 `;
+
+const BigCardContainer = styled.View`
+  margin-top: 20px;
+`;
+
+const BigCardData =[
+
+  {
+
+    image: "https://frankeey.com/image/course/KXineZ1NFtQnHFq07QI8ndjzxD5ouTGu4r9S4Zwg.jpg"
+
+  },
+  {
+
+    image:"https://frankeey.com/image/course/D4TH2shDtqF4wwtQFsEkd998nXqOr61LvPhraiQ7.jpg"
+
+  },
+  {
+
+    image:"https://frankeey.com/image/course/qWuNiXOh7KMO0sxLSBEQIUX4T46v4oKAdsbA6DWt.png"
+
+  },
+  {
+
+    image:"https://frankeey.com/image/course/QfIUfKnqRifDfegQewlKTAZQiFWIIkwobqQ90YKL.jpg"
+
+  },
+  
+];

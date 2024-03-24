@@ -6162,10 +6162,10 @@ expo-modules-autolinking@>=0.8.1, expo-modules-autolinking@1.10.3:
     find-up "^5.0.0"
     fs-extra "^9.1.0"
 
-expo-modules-core@1.11.10:
-  version "1.11.10"
-  resolved "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-1.11.10.tgz"
-  integrity sha512-L1DSxV3AUnEvR8+G1JHbMPjpwqALv0AF71oREhDJ/ehI2TDX6LkE+up5BUK1/++UjmVu1lviefbUfLut2F5wNQ==
+expo-modules-core@1.11.11:
+  version "1.11.11"
+  resolved "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-1.11.11.tgz"
+  integrity sha512-c4SmfHfLV/HthYLJT16NJhUZ1lVV8XP4UImIabdvKQQ8MGiFnFytVX+Jf8rm2uGBDbzz6zgEbNITeio14mdUhg==
   dependencies:
     invariant "^2.2.4"
 
@@ -6175,9 +6175,9 @@ expo-status-bar@~1.11.1:
   integrity sha512-ddQEtCOgYHTLlFUe/yH67dDBIoct5VIULthyT3LRJbEwdpzAgueKsX2FYK02ldh440V87PWKCamh7R9evk1rrg==
 
 expo@*, expo@~50.0.11:
-  version "50.0.11"
-  resolved "https://registry.npmjs.org/expo/-/expo-50.0.11.tgz"
-  integrity sha512-XEq8By1l8FQo2SEzhXfQEoKBd0nZ9j6HKsDzj1dUrRVYd02SMH/xUCERxuRaWUL2u1bWdfaFlg/Dmc/2JlVkKQ==
+  version "50.0.12"
+  resolved "https://registry.npmjs.org/expo/-/expo-50.0.12.tgz"
+  integrity sha512-GqngGj+BRjapzZ+/Ve3kFCHDdiGFPZ3FsIkd034aYKVExjxI298vOeGkfQsh/CpSpSpBvnt10XMYdgDn+RwyVQ==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/cli" "0.17.7"
@@ -6191,7 +6191,7 @@ expo@*, expo@~50.0.11:
     expo-font "~11.10.3"
     expo-keep-awake "~12.8.2"
     expo-modules-autolinking "1.10.3"
-    expo-modules-core "1.11.10"
+    expo-modules-core "1.11.11"
     fbemitter "^3.0.0"
     whatwg-url-without-unicode "8.0.0-3"
 
