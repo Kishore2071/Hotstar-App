@@ -1,29 +1,27 @@
-import React from "react";
-import styled from 'styled-components'
+import react from "react";
+import styled from "styled-components";
 
-export default class BigCard extends React.Component {
+export default class Bigcard extends react.Component{
     render(){
-        return (
+        return(
             <Container>
-                <Image 
-                    source={{ 
-                        uri : this.props.image
-                    }}/>
+                <Image source={{uri: this.props.image }} />
             </Container>
         );
     }
 }
 
 const Container = styled.View`
-    width: 338px;
-    height: 180px;
+    width: 290px;
+    height: 170px;
     border-radius: 10px;
-    background-color: white;
+    background: white;
     overflow: hidden;
-    margin-left: 20px;
+    margin-left: 10px;
 `;
 
 const Image = styled.Image`
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 `;

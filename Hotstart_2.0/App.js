@@ -1,33 +1,61 @@
-import React from 'react';
-import { StatusBar,ScrollView} from 'react-native';
-import styled from "styled-components"
-import BigCard from './components/BigCard';
+import React from "react";
+import { StatusBar, ScrollView, TouchableOpacity } from "react-native";
+import styled from "styled-components";
+import Bigcard from "./components/Bigcard";
+import Medcard from "./components/Medcard";
+import Menu from "./components/Menu";
+import { Ionicons } from "@expo/vector-icons"
 
 export default class App extends React.Component {
-  render(){
+  render() {
     return (
       <Main>
+        <Menu />
         <ScrollView showsVerticalScrollIndicator={false}>
-          <StatusBar hidden/>
+          <StatusBar hidden />
           <Header>
-            <Logo>Hotstar</Logo>
+            <TouchableOpacity
+            style={{
+                  position: "absolute",
+                  top: 10,
+                  left: 10,
+                  zIndex: 100
+                }}
+            onPress={()=>{
+              console.log("Menu Icon");
+            }}
+            >
+              <Ionicons name="menu" color="black" size={35} />
+            </TouchableOpacity>
+            <Logo>HOTSTAR</Logo>
             <Profile />
           </Header>
-          <BigCardContainer>
+          <Bigcardcontainer>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              
               {
-                BigCardData.map(
-                
-                (data,index)=>( 
-                  <BigCard key={index} image={data.image} />
+                Bigcarddata.map
+                  (
+                    (data, index) => {
+                      return <Bigcard key={index} image={data.image} />;
+                    }
                   )
+              }
+            </ScrollView>
+          </Bigcardcontainer>
+          <Continuetext>
+            Continue Watching
+          </Continuetext>
+          <Medcardcontainer>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              {
+                Medcarddata.map(
+                  (data, index) => {
+                    return <Medcard key={index} image={data.image} />;
+                  }
                 )
               }
-              
-
             </ScrollView>
-          </BigCardContainer>
+          </Medcardcontainer>
         </ScrollView>
       </Main>
     );
@@ -36,58 +64,76 @@ export default class App extends React.Component {
 
 const Main = styled.View`
   flex: 1;
-  background-color: #E5E5E5;
-
+  background-color: #e5e5e5;
 `;
 
 const Header = styled.View`
-  height: 56px;
   width: 100%;
-  background-color: #FFF;
+  height: 56px;
+  background: white;
+`;
+
+const Logo = styled.Text`
+  margin-left: 60px;
+  color: black;
+  margin-top: 10px;
+  font-size: 25px;
 `;
 
 const Profile = styled.Image`
   position: absolute;
   top: 7px;
-  right: 5px;
+  left: 360px;
   width: 40px;
   height: 40px;
-  background: #D9D9D9;
+  background: #c4c4c4;
   border-radius: 20px;
 `;
 
-const Logo = styled.Text`
-  margin-top: 10px;
-  margin-left: 10px;
-  color: black;
-  font-size: 25px;
-`;
-
-const BigCardContainer = styled.View`
+const Bigcardcontainer = styled.View`
   margin-top: 20px;
 `;
 
-const BigCardData =[
-
+const Bigcarddata = [
   {
-
-    image: "https://frankeey.com/image/course/KXineZ1NFtQnHFq07QI8ndjzxD5ouTGu4r9S4Zwg.jpg"
-
+    image: "https://frankeey.com/image/course/qWuNiXOh7KMO0sxLSBEQIUX4T46v4oKAdsbA6DWt.png"
   },
   {
-
-    image:"https://frankeey.com/image/course/D4TH2shDtqF4wwtQFsEkd998nXqOr61LvPhraiQ7.jpg"
-
+    image: "https://frankeey.com/image/course/Bi6qLdjQeyRtu6LKj2MmbXbHUahni9nyx7lum2Ud.jpg"
   },
   {
-
-    image:"https://frankeey.com/image/course/qWuNiXOh7KMO0sxLSBEQIUX4T46v4oKAdsbA6DWt.png"
-
+    image: "https://frankeey.com/image/course/D4TH2shDtqF4wwtQFsEkd998nXqOr61LvPhraiQ7.jpg"
   },
   {
-
-    image:"https://frankeey.com/image/course/QfIUfKnqRifDfegQewlKTAZQiFWIIkwobqQ90YKL.jpg"
-
+    image: "https://frankeey.com/image/course/DnWEvkqWt5YF1drI31VsX2BMHd8uukyxDaSvgY8B.png"
   },
-  
-];
+]
+
+const Medcarddata = [
+  {
+    image: require("./assets/images/horzontalimg/1.png")
+  },
+  {
+    image: require("./assets/images/horzontalimg/2.png")
+  },
+  {
+    image: require("./assets/images/horzontalimg/3.png")
+  },
+  {
+    image: require("./assets/images/horzontalimg/4.png")
+  },
+]
+const Continuetext = styled.Text`
+  margin-top: 10px;
+  margin-left: 15px;
+  width: 200px;
+  height: 26px;
+  flex-shrink: 0;
+  color: #000;
+  font-size: 21px;
+  font-weight: 700;
+`;
+
+const Medcardcontainer = styled.View`
+  margin-top: 20px;
+`;
